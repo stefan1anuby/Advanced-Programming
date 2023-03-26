@@ -1,14 +1,22 @@
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
 
         Person stefan = new Person("Stefan");
-        Person alex = new Person("Alex");
-        Person mircea = new Person("Mircea");
+        Programmer alex = new Programmer("Alex");
+        Designer mircea = new Designer("Mircea");
 
         Company bitdefender = new Company("BitDefender");
         Company capicom = new Company("Capicom");
         Company amazon = new Company("Amazon");
+        
+        mircea.addRelationship(stefan, "best-frienddd");
+
+        stefan.addRelationship(mircea, "best-friend");
+        stefan.addRelationship(alex, "boss");
+
+        alex.addRelationship(amazon, "company-1");
+        alex.addRelationship(bitdefender, "company-2");
+        alex.addRelationship(capicom, "company-3");
 
         Network network = new Network();
 
@@ -20,6 +28,6 @@ public class App {
         network.addNode(capicom);
         network.addNode(amazon);
 
-        System.out.println(network.toString());
+        network.print();
     }
 }

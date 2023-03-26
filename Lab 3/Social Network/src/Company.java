@@ -18,7 +18,17 @@ public class Company implements Node , Comparable<Company> {
 	@Override
 	public int compareTo(Company other) {
 		return this.name.compareTo(other.name);
-		// what if the name is null?
+	}
+
+	@Override
+	public int getConnectionNumber() {
+		// pentru ca nu exista relatii companie - persoana
+		return 0;
+	}
+
+	@Override
+	public void print() {
+		System.out.println(this.name);
 	}
 
 }

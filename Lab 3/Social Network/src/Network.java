@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Network {
@@ -8,11 +9,12 @@ public class Network {
 		nodes.add(node);
 	}
 
-	public String toString(){
-		StringBuilder output = new StringBuilder();
+	public void print(){
+		Collections.sort(nodes, new NodeComparator());
+
 		for(Node node : nodes ){
-			output.append(node.getName() + " ");
+			node.print();
 		}
-		return output.toString();
 	}
+
 }
