@@ -3,7 +3,6 @@ package demo.demo;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.OptionalDouble;
 import java.util.Set;
 
 public class Problem {
