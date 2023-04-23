@@ -31,28 +31,17 @@ public class CatalogUtil {
 		}
 		return catalog;
 	}
-	public static void view(Document doc) throws IOException {
-		Desktop desktop = Desktop.getDesktop();
-		File file = null;
-		if(doc.getLocation().startsWith("http")){
-
-			try
-			{
-				URI uri = new URI(doc.getLocation());
-				Desktop dt = Desktop.getDesktop();
-				dt.browse(uri);
-			}
-			catch(Exception e){
-				e.printStackTrace();
-			}
-		}
-		else{
-			file = new File(doc.getLocation());
-		}
-
-		if(file != null){
-			desktop.open(file);
-		}
+	public static void view(Document doc) throws IOException, InvalidDocumentException {
+		
+		try {
+			
+			URI uri = new URI(doc.getLocation());
+			Desktop dt = Desktop.getDesktop();
+			dt.browse(uri);
+		} catch (Exception e) {
+			// TODO: handle exception
+			throw new InvalidDocumentException();
+		}		
 	}
 
 	public static void report(Catalog catalog){

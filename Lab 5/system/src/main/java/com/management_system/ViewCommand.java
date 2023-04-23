@@ -15,7 +15,7 @@ public class ViewCommand implements Command{
     }
 
 	@Override
-	public void execute() throws IOException {
+	public void execute() throws IOException, InvalidDocumentException {
 		
         CatalogUtil.view(doc);
     }

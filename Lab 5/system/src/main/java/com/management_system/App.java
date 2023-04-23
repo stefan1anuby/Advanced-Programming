@@ -1,7 +1,5 @@
 package com.management_system;
 
-import java.io.IOException;
-
 /**
  * Hello world!
  *
@@ -10,8 +8,6 @@ public class App
 {
     public static void main( String[] args ) throws InvalidCatalogException
     {
-        System.out.println( "Hello World!" );
-
         Catalog catalog = new Catalog("MyDocuments");
         Document book = new Document("book1", "title_1" , "D:/Web/EMOF-WEB-Project/login.html" );
         Document article = new Document("article1", "title_2" , "https://profs.info.uaic.ro/~acf/java/labs/lab_05.html" );
@@ -38,7 +34,5 @@ public class App
         listCommand.setCatalog(catalog2);
         invoker.setCommand(listCommand).executeCommand();
     
-        
-
     }
 }
