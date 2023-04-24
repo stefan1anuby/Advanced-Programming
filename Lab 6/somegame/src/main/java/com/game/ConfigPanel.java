@@ -1,5 +1,7 @@
 package com.game;
 
+import java.awt.event.ActionEvent;
+
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
@@ -25,14 +27,13 @@ public class ConfigPanel extends JPanel {
 		dotsLabel = new JLabel("Number of dots:");
 		dotsSpinner = new JSpinner(new SpinnerNumberModel(6, 3, 100, 1));
 
-		linesLabel = new JLabel("Number of dots:");
-		Double probabilities[] = {0.1 , 0.5 , 1.0};
+		linesLabel = new JLabel("Line Probability");
+		Double probabilities[] = {1.0 , 0.5 , 0.1 };
 		linesCombo = new JComboBox(probabilities);
 
 		createButton = new JButton("Create");
 
-		//create the rest of the components
-
+		createButton.addActionListener(this::create);
 		
 		add(dotsLabel); //JPanel uses FlowLayout by default
 		add(dotsSpinner);
@@ -41,5 +42,9 @@ public class ConfigPanel extends JPanel {
 		add(createButton);
 		 
  	}
+
+	private void create(ActionEvent e) {
+		frame.canvas.createBoard();
+	}
 
 }
