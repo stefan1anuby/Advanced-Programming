@@ -35,7 +35,7 @@ public class ConfigPanel extends JPanel {
 
 		createButton.addActionListener(this::create);
 		
-		add(dotsLabel); //JPanel uses FlowLayout by default
+		add(dotsLabel);
 		add(dotsSpinner);
 		add(linesLabel);
 		add(linesCombo);
